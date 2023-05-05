@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jsファイルとcssファイルの指定 -->
+    <script src="./index.js" type="module"></script>
+    <link href="./index.css" rel="stylesheet">
+    <!-- フォントのインポート -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <!-- アイコンのインポート -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- textalive-app-apiのインポート -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/textalive-app-api/dist/index.js"></script>
+    <!-- three.jsのインポート -->
+    <script src="https://unpkg.com/three@0.147.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+    <title>Magical Leek!</title>
+</head>
+
+<body>
+    <!-- オーバーレイ / Overlay -->
+    <div id="overlay">
+        <p><span>&#xf254;</span>now loading...</p>
+    </div>
+
+    <!-- ヘッダ / Header -->
+    <div id="header">
+        <div id="container">
+            <!-- 再生コントロール / Playback control -->
+            <div id="control">
+                <a href="#" id="play" class="disabled">
+                    <i class="material-icons">play_circle_outline</i>
+                </a>
+                <a href="#" id="stop" class="disabled">
+                    <i class="material-icons">pause_circle_outline</i>
+                </a>
+            </div>
+            <!-- アーティストと楽曲の情報 / Artist and song info -->
+            <div id="meta">
+                <div id="artist">artist: <span>-</span></div>
+                <div id="song">song: <span>-</span></div>
+            </div>
+        </div>
+        <!-- スコアボード -->
+        <div class="score">
+            <span>score</span>
+            <br>
+            <span id="scoreText">0</span>
+        </div>
+    </div>
+
+    <!-- 音源 / Audio souce -->
+    <div id="media"></div>
+
+    <!-- 歌詞 / Lyrics text -->
+    <div id="lyrics">
+        <!-- 文字 / Text -->
+        <div id="text"></div>
+    </div>
+
+
+    <!-- ノードを走らせる場所 -->
+    <div id="lane">
+        <div id="l" class="bar"></div>
+        <div id="c" class="bar"></div>
+        <div id="r" class="bar"></div>
+    </div>
+    <!-- three.js用キャンバス -->
+    <!-- <canvas id="myCanvas"></canvas> -->
+</body>
+
+</html>

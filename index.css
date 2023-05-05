@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#body {
+    top: 0;
+    height: 100%;
+    height: 100%;
+    left: 0;
+}
+
+/* laneの設定 */
+#lane {
+    width: 100%;
+    height: 430px;
+    background: rgba(217, 217, 217, 0.6);
+    opacity: 1;
+    position: relative;
+    top: 20px;
+    left: 0px;
+    overflow: hidden;
+}
+
+/* barクラスの設定 */
+.bar {
+    width: 90px;
+    height: 430px;
+    opacity: 1;
+    position: absolute;
+    overflow: hidden;
+}
+
+/* 左側判定バーの設定 */
+#l {
+    background: rgba(120, 243, 243, 0.6);
+    left: 10%;
+}
+
+/* 右側判定バーの設定 */
+#r {
+    background: rgba(120, 243, 243, 0.7300000190734863);
+    right: 10%;
+}
+
+/* 中央ノード生成バーの設定 */
+#c {
+    background: rgba(123, 243, 120, 0.6);
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+/* オーバーレイ / Overlay */
+#overlay {
+    /* user-select: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background: #0006;
+    color: #fffc;
+    z-index: 5;
+}
+
+#overlay.disabled {
+    display: none;
+}
+
+#overlay>p {
+    width: 100vw;
+    font-size: 40px;
+    text-align: center;
+}
+
+#overlay>p>span {
+    display: inline-block;
+    padding-right: 20px;
+    margin-right: 20px;
+    border-right: 1px solid #fff6;
+}
+
+/* ヘッダの設定 */
+#header {
+    /* 子要素は縦に中央揃え / Vertically middle-aligned */
+    align-items: center;
+}
+
+/* containerの設定 */
+#container {
+    /* 少し余裕を持たせる / Box with a small padding */
+    padding: 10px 16px;
+
+    /* フォントサイズ小さめ、太め / Small but bold typography */
+    font-size: 20px;
+    font-weight: bold;
+
+    /* 子要素を横に並べて配置 / Align child content to the right */
+    display: flex;
+
+    /* ページ左に固定 / Stick to the page left */
+    position: fixed;
+    left: 0;
+
+    /* 背景色と文字色 / Background and text color */
+    background: #000c;
+    color: #fff;
+
+    z-index: 1;
+}
+
+/* scoreクラスの設定 */
+.score {
+    width: 357px;
+    color: rgba(0, 0, 0, 1);
+    top: 0px;
+    font-family: Kanit;
+    font-weight: Bold;
+    font-size: 90px;
+    opacity: 1;
+    text-align: center;
+    margin: auto;
+}
+
+/* アーティストと楽曲の情報 / Artist and song info */
+#meta {
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#meta span {
+    font-weight: normal;
+}
+
+/* 音源 / Audio source */
+#media {
+    /* 下寄せ / Bottom-aligned */
+    bottom: 10px;
+    /* ページ左に固定 / Stick to the page left */
+    position: fixed;
+    left: 0;
+
+    /* 背景色と文字色 / Background and text color */
+    background: #000c;
+    color: #fff;
+
+    z-index: 1;
+}
+
+#media.disabled>.textalive-media-wrapper {
+    width: 0;
+    height: 0;
+}
+
+/* ボタン */
+#control {
+    font-size: 21px;
+    padding-right: 10px;
+    border-right: 1px solid #fff9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#control.disabled {
+    display: none;
+}
+
+#control a {
+    color: rgb(99 208 226);
+    text-decoration: none;
+}
+
+#control a.disabled {
+    opacity: 0.3;
+}
+
+#control a:hover {
+    color: rgb(255 148 56);
+}
